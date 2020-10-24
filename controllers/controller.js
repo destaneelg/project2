@@ -1,4 +1,5 @@
 var express = require("express");
+<<<<<<< HEAD
 
 var router = express.Router();
 
@@ -56,3 +57,6 @@ router.get("/", function(req, res) {
   
   // Export routes for server.js to use.
   module.exports = router;
+=======
+var router = express.Router();
+>>>>>>> 0af598c6ad220b539434f66e13a0afd42e174ea9

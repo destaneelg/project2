@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var orm = require("./config/orm.js");
 
 // Set Handlebars.
@@ -49,3 +50,8 @@ app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
+=======
+var mysql = require("mysql");
+var express = require("express");
+var exphbs = require("express-handlebars");
+>>>>>>> 0af598c6ad220b539434f66e13a0afd42e174ea9
