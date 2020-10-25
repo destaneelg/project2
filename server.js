@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+
+var express = require("express");
+var exphbs = require("express-handlebars");
 var orm = require("./config/orm.js");
 
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-var express = require("express");
 var mysql = require("mysql");
 
 
@@ -25,7 +24,6 @@ orm.selectWhere("parties", "party_type", "grown-up");
 
 
 // Routes
-// =============================================================
 require("./app/routes/api-routes.js")(app);
 require("./app/routes/html-routes.js")(app);
 
@@ -50,8 +48,3 @@ app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
-=======
-var mysql = require("mysql");
-var express = require("express");
-var exphbs = require("express-handlebars");
->>>>>>> 0af598c6ad220b539434f66e13a0afd42e174ea9
