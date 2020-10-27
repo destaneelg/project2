@@ -4,13 +4,19 @@ use database projects_db;
 
 create table projects(
     id int not null auto_increment primary key,
-    CreatedDate date default 0000-00-00,
     ProjectName varchar(50),
-    Scope varchar(250), --project description
-    ProjectOwner varchar(30),
-    Urgency varchar(15),
-    ExpectedCompletionDate date 0000-00-00,--use api
-    CompletedDate date 0000-00-00, --use api 
-    ProjectDurationDays int (4) not null
-)
+    Scope varchar(250),
+);
 
+table projectOwner(
+    id int not null auto_increment primary key,
+    ProjectOwner varchar(30),
+    Urgency varchar(15)
+);
+
+table projectPriority(
+    id int not null auto_increment primary key,
+    ExpectedCompletionDate date 0000-00-00,
+    Status varchar(15)
+    -- ProjectDurationDays int (4) not null
+);
