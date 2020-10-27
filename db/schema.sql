@@ -7,10 +7,17 @@ create table projects(
     CreatedDate date default 0000-00-00,
     ProjectName varchar(50),
     Scope varchar(250),
+);
+
+table projectOwner(
+    id int not null auto_increment primary key,
     ProjectOwner varchar(30),
-    Urgency varchar(15),
+    Urgency varchar(15)
+);
+
+table projectPriority(
+    id int not null auto_increment primary key,
     ExpectedCompletionDate date 0000-00-00,
     CompletedDate date 0000-00-00,
     ProjectDurationDays int (4) not null
-)
-
+);
