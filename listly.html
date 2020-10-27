@@ -28,9 +28,16 @@
                         <th scope="col" id="project-id">#</th>
                         <th scope="col" id="project-name">Project Name</th>
                         <th scope="col" id="project-owner">Person</th>
-                        <th scope="col" id="priority-level-high">Priority Level</th>
+                        <th scope="col" id="project-scope">Description</th>
+                        <th scope="col" id="urgency-level-high">Urgency Level</th>
                         <th scope="col" id="projects-status">Status</th>
                         <th scope="col" id="due-date">Due Date</th>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,33 +45,61 @@
                         <th scope="row" class="project-id">1</th>
                         <td class="project-name">Wire Frame</td>
                         <td class="project-owner">Emily</td>
-                        <td class="priority-level-mild">Mild</td>
+                        <td scope="col" id="project-scope">Lorem ipsum dolor sit amet.</td>
+                        <td class="urgency-level-mild">Mild</td>
                         <td class="projects-status-open">In Progress</td>
                         <td class="due-date">Saturday, October 24</td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                     <tr>
                         <th scope="row" class="project-id">2</th>
                         <td class="project-name">Set Up Database</td>
                         <td class="project-owner">Greg</td>
-                        <td class="priority-level-low">Low</td>
+                        <td scope="col" id="project-scope">Lorem ipsum dolor sit amet.</td>
+                        <td class="urgency-level-low">Low</td>
                         <td class="projects-status-open">In Progress</td>
                         <td class="due-date">Saturday, October 24</td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                     <tr>
                         <th scope="row" class="project-id">3</th>
                         <td class="project-name">Start The Server</td>
                         <td class="project-owner">Destanee</td>
-                        <td class="priority-level-high">High</td>
+                        <td scope="col" id="project-scope">Lorem ipsum dolor sit amet.</td>
+                        <td class="urgency-level-high">High</td>
                         <td class="projects-status-completed">Completed</td>
                         <td class="due-date">Saturday, October 24</td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                     <tr>
                         <th scope="row" class="project-id">4</th>
                         <td class="project-name">Set up Connections</td>
                         <td class="project-owner">Quin</td>
-                        <td class="priority-level-low">Low</td>
+                        <td scope="col" id="project-scope">Lorem ipsum dolor sit amet.</td>
+                        <td class="urgency-level-low">Low</td>
                         <td class="projects-status-open">In Progress</td>
                         <td class="due-date">Saturday, October 24</td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                 </tbody>
             </table>
@@ -74,10 +109,17 @@
                     <tr>
                         <th scope="col" class="project-class">#</th>
                         <th scope="col" class="project-name">Project Name</th>
+                        <th scope="col" id="project-scope">description</th>
                         <th scope="col" class="project-owner">Person</th>
-                        <th scope="col" class="priority-level">Priority Level</th>
+                        <th scope="col" class="urgency-level">urgency Level</th>
                         <th scope="col" class="projects-status">Status</th>
                         <th scope="col" class="due-date">Due Date</th>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,17 +127,31 @@
                         <th scope="row" class="project-id">1</th>
                         <td class="project-name">Final Readme</td>
                         <td class="project-owner-emily">Emily</td>
-                        <td class="priority-level-mild">Mild</td>
+                        <td scope="col" id="project-scope">Lorem ipsum dolor sit amet.</td>
+                        <td class="urgency-level-mild">Mild</td>
                         <td class="projects-status-open">In Progress</td>
                         <td class="due-date">Tuesday, November 3</td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                     <tr>
                         <th scope="row" class="project-id">2</th>
                         <td class="project-name">Final Presentation</td>
                         <td class="project-owner">Team</td>
-                        <td class="priority-level-high">@mdo</td>
+                        <td scope="col" id="project-scope">Lorem ipsum dolor sit amet.</td>
+                        <td class="urgency-level-high">@mdo</td>
                         <td class="projects-status">In Progress</td>
                         <td class="due-date">@mdo</td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </button></td>
+                        <td scope="col" id="due-date"><button type="button" class="btn btn-default btn-sm">
+                                <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            </button></td>
                     </tr>
                 </tbody>
             </table>

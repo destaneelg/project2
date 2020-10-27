@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CMS - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <div class="col-sm-2 mt-4">
+          <a class="btn btn-light" href="/blog">Go to Blog</a>
+        </div>
+      </div>
+      <div class="col-md-5 offset-md-3">
+        <form id="cms">
+          <div class="form-group">
+            <label for="title">Project Name:</label>
+            <input type="text" class="form-control" id="project-name">
+            <br />
+            <label for="body">Project Description:</label>
+            <textarea class="form-control" rows="2" id="project-scope"></textarea>
+            <label for="category">Urgency:</label>
+            <select class="custom-select" id="category">
+              <option value="Low">Low</option>
+              <option value="Mild">Mild</option>
+              <option value="High">High</option>
+            </select>
+            <label for="category">Project Status:</label>
+            <select class="custom-select" id="category">
+              <option value="Low">Open</option>
+              <option value="Mild">Complete</option>
+            </select>
+            <label for="title">Due Date:</label>
+            <input type="text" class="form-control" id="project-class">
+            <br />
+            <br />
+            <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+            <div class="form-group">
+              <label for="category">Select Category:</label>
+              <select class="custom-select" id="category">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Custom Script -->
+  <script src="js/cms.js" type="text/javascript"></script>
+
+</body>
+
+</html>
