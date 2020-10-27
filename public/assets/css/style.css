@@ -1,3 +1,8 @@
+body {
+    background-image: url(../img/Start\ Page\ Background.jpg);
+    background-size: cover;
+}
+
 .container {
     margin-top: 50px;
 }
@@ -18,20 +23,20 @@ thead {
     background-color: 	#f8f9fa;
 }
 
-tbody {
+/* tbody {
 background-color: 	#white;
-}
+} */
 
-.priority-level-high {
+.urgency-level-high {
     background-color: #f62b54;
     color: white;
     }
-.priority-level-mild {
+.urgency-level-mild {
 background-color: #ffac2b;
 color: white;
 }
 
-.priority-level-low {
+.urgency-level-low {
 background-color: 	#18d068;
 color: white;
 }
@@ -50,3 +55,11 @@ color: white;
     background-image: url(../img/Headshot_EGA.jpg);
     size: 10%;
 } */
+
+.fa-plus-square {
+    color: #18d068
+}
+
+.fa-minus-square {
+    color: #f62b54;
+}
