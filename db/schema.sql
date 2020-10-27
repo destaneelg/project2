@@ -4,7 +4,6 @@ use database projects_db;
 
 create table projects(
     id int not null auto_increment primary key,
-    CreatedDate date default 0000-00-00,
     ProjectName varchar(50),
     Scope varchar(250),
 );
@@ -18,6 +17,6 @@ table projectOwner(
 table projectPriority(
     id int not null auto_increment primary key,
     ExpectedCompletionDate date 0000-00-00,
-    CompletedDate date 0000-00-00,
-    ProjectDurationDays int (4) not null
+    Status varchar(15)
+    -- ProjectDurationDays int (4) not null
 );
