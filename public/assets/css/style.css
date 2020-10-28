@@ -63,3 +63,7 @@ color: white;
 .fa-minus-square {
     color: #f62b54;
 }
+
+td, th {
+    background-color: white;
+}
