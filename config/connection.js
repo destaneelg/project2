@@ -8,7 +8,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "",
     password: "",
-    database: ""
+    database: "projects_db"
   });
   
   onnection.connect(function(err) {
@@ -20,3 +20,8 @@ var con = mysql.createConnection({
   });
   
   module.exports = connection;
+  module.exports = {
+    endpoint: process.env.API_URL,
+    masterKey: process.env.API_KEY,
+    port: process.env.PORT
+  }
