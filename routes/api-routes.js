@@ -1,45 +1,79 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
 
-// Dependencies
-// =============================================================
-var Chirp = require("../models/chirp.js");
+// A set of routes for displaying and saving data to the db
 
 
-// Routes
-// =============================================================
+// Requiring our models
+//may need to change const to var 
+const db = require("../models");
 module.exports = function(app) {
 
-  // Get all chirps
-  app.get("/api/all", function(req, res) {
-
-    // Finding all Chirps, and then returning them to the user as JSON.
-    // Sequelize queries are asynchronous, which helps with perceived speed.
-    // If we want something to be guaranteed to happen after the query, we'll use
-    // the .then function
-    Chirp.findAll({}).then(function(results) {
-      // results are available to us inside the .then
-      res.json(results);
-    });
-
+  // getting all posts with GET route 
+  app.get("/api/posts/", function(req, res) {
+    db.Post.findAll({})
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
-  // Add a chirp
-  app.post("/api/new", function(req, res) {
+  // returning posts of a specific category with Get route
+  app.get("/api/posts/category/:category", function(req, res) {
+    db.Post.findAll({
+      where: {
+        category: req.params.category
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
 
-    console.log("Chirp Data:");
-    console.log(req.body);
+  // retrieving a single post with Get route  
+  app.get("/api/posts/:id", function(req, res) {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
 
-    Chirp.create({
-      author: req.body.author,
+  // saving a new post with POST route  
+  app.post("/api/posts", function(req, res) {
+    console.log('this is the list', req.body);
+    db.Post.create({
+      title: req.body.title,
       body: req.body.body,
-      created_at: req.body.created_at
-    }).then(function(results) {
-      // `results` here would be the newly created chirp
-      res.end();
-    });
-
+      category: req.body.category
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
+  // DELETE route for deleting posts
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  // PUT route for updating posts
+  app.put("/api/posts", function(req, res) {
+    db.Post.update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
 };
