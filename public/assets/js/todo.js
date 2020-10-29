@@ -12,25 +12,31 @@ $(document).ready(function() {
       getPostData(postId);
     }
   
-    // Getting jQuery references to the post body, title, form, and category select
-    var bodyInput = $("#body");
-    var titleInput = $("#title");
-    var cmsForm = $("#cms");
-    var postCategorySelect = $("#category");
-    // Giving the postCategorySelect a default value
-    postCategorySelect.val("Personal");
+    // Getting jQuery references to the post description, name, form, and category select
+    var descriptionInput = $("#description");
+    var projectNameInput = $("#name");
+    var todoForm = $("#to-do");
+    var projectUrgency = $("#urgency");
+    var projectStatus = $("status");
+    var dueDate = $("due-date");
+    var projectCategorySelect = $("#category");
+    // Giving the projectCategorySelect a default value
+    projectCategorySelect.val("Personal");
     // Adding an event listener for when the form is submitted
-    $(cmsForm).on("submit", function handleFormSubmit(event) {
+    $(todoForm).on("submit", function handleFormSubmit(event) {
       event.preventDefault();
-      // Wont submit the post if we are missing a body or a title
-      if (!titleInput.val().trim() || !bodyInput.val().trim()) {
+      // Wont submit the post if we are missing a description or a name
+      if (!projectNameInput.val().trim() || !descriptionInput.val().trim()) {
         return;
       }
       // Constructing a newPost object to hand to the database
-      var newPost = {
-        title: titleInput.val().trim(),
-        body: bodyInput.val().trim(),
-        category: postCategorySelect.val()
+      var newProject = {
+        name: projectNameInput.val().trim(),
+        description: descriptionInput.val().trim(),
+        urgency: projectUrgency.val(),
+        status: projectStatus.val(),
+        date: dueDate.val().trim(),
+        category: projectCategorySelect.val()
       };
   
       console.log(newPost);
@@ -42,13 +48,13 @@ $(document).ready(function() {
         updatePost(newPost);
       }
       else {
-        submitPost(newPost);
+        submitProject(newProject);
       }
     });
   
     // Submits a new post and brings user to blog page upon completion
-    function submitPost(Post) {
-      $.post("/api/posts/", Post, function() {
+    function submitProject(Project) {
+      $.post("/api/projects/", Project, function() {
         window.location.href = "/list";
       });
     }
@@ -57,10 +63,13 @@ $(document).ready(function() {
     function getPostData(id) {
       $.get("/api/posts/" + id, function(data) {
         if (data) {
-          // If this post exists, prefill our cms forms with its data
-          titleInput.val(data.title);
-          bodyInput.val(data.body);
-          postCategorySelect.val(data.category);
+          // If this post exists, prefill our to-do forms with its data
+          projectNameInput.val(data.name);
+          descriptionInput.val(data.description);
+          projectUrgency.val(data.urgency);
+          projectStatus.val(data.status);
+          dueDate.val(date);
+          projectCategorySelect.val(data.category);
           // If we have a post with this id, set a flag for us to know to update the post
           // when we hit submit
           updating = true;

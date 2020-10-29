@@ -1,11 +1,11 @@
 $(document).ready(function () {
     // blogContainer holds all of our posts
     var blogContainer = $(".blog-container");
-    var postCategorySelect = $("#category");
+    var projectCategorySelect = $("#category");
     // Click events for the edit and delete buttons
     $(document).on("click", "button.delete", handlePostDelete);
     $(document).on("click", "button.edit", handlePostEdit);
-    postCategorySelect.on("change", handleCategoryChange);
+    projectCategorySelect.on("change", handleCategoryChange);
     var posts;
 
     // This function grabs posts from the database and updates the view
@@ -33,7 +33,7 @@ $(document).ready(function () {
             url: "/api/posts/" + id
         })
             .then(function () {
-                getPosts(postCategorySelect.val());
+                getPosts(projectCategorySelect.val());
             });
     }
 
