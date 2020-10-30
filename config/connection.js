@@ -2,7 +2,6 @@
 // Exporting connection 
 //npm install mysql
 var mysql = require('mysql');
-
 // For jawsDB
 var connection;
 if (process.env.JAWSDB_URL) {
@@ -27,8 +26,26 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-module.exports = connection;
+
 module.exports = {
   endpoint: process.env.API_URL,
   port: process.env.PORT
 };
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "projects_db"
+  });
+  
+  connection.connect(function(err) {
+    if (err) {
+      console.error("error connecting: " + err.stack);
+      return;
+    }
+    console.log("connected as id " + connection.threadId);
+  });
+  
+  module.exports = connection;
+
