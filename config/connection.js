@@ -11,15 +11,15 @@ if (process.env.JAWSDB_URL) {
 } else {
     // DB is local on localhost
     connection = mysql.createConnection({
-        port: 3306,
+        port: 8080,
         host: 'localhost',
         user: 'root',
-        password: 'coast',
-        database: 'burgers_db'
+        password: '',
+        database: 'projects_db'
     });
 }
 
-onnection.connect(function(err) {
+connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
