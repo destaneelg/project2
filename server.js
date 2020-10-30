@@ -14,34 +14,31 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static directory
-app.use(express.static("public"));
-{
-  "development": {
-    "username": "root",
-    "password": "Bthootu16",
-    "database": "blogger",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
-  }
+var mysql = require('mysql');
+// For jawsDB
+var connection;
+if (process.env.JAWSDB_URL) {
+    // DB is JawsDB on Heroku
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    // DB is local on localhost
+    connection = mysql.createConnection({
+        port: 8080,
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'projects_db'
+    });
 }
+
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
+
 
 
 // Routes
@@ -54,3 +51,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+module.exports = {
+  endpoint: process.env.API_URL,
+  port: process.env.PORT
+}; connection;
