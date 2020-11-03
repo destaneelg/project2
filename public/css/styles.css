@@ -162,7 +162,7 @@ td, th {
   float: right;
 }
 
-.delete {
+.delete-btn {
   background-color: white;
   color: black;
   border: .5px solid #18d068;
@@ -172,7 +172,7 @@ td, th {
   margin: 5px;
 }
 
-.delete:hover {
+.delete-btn:hover {
   background-color: #18d068;
   color: white;
   border: .5px solid #18d068;
