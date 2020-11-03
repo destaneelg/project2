@@ -18,7 +18,7 @@ $(document).ready(function () {
       urgencyString = "/urgency/" + urgencyString;
     }
     $.get("/api/posts" + urgencyString, function (data) {
-      console.log("Posts", data);
+      // console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
         displayEmpty();
@@ -35,29 +35,30 @@ $(document).ready(function () {
       method: "DELETE",
       url: "/api/posts/" + id
     })
-      .then(function () {
-        console.log("hey");
-        var queryURL = "https://media.giphy.com/media/l0IykI5OLMhjtnB60/giphy.gif";
+      .then(function(response) {
+        console.log(response);
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=like+a+boss&api_key=dc6zaTOxFJmzC&limit=1";
     
         // call ajax that allows you to make a query of info on the web
         // ajax takes url and get method 
         $.ajax({
             url: queryURL,
-            method: "GET"
+            method: "GET",
         })
     
-            //after you look at api- run this dad
+            //after you look at api- run this
             .then(function (response) {
-    
+                console.log(response);
                 // saving img to imgeURL
-                var imageUrl = response.data.image_original_url;
-                  console.log(imageUrl);
+                var imageURL = response.data[0].url;
+                console.log(response.data[0].url);
+                  console.log(imageURL);
                 // creating and sotring an img tag
                 var likeABoss = $("<img>");
     
                 // image element likeABoss and change the souce is the url
                 //add an alt attribute 
-                likeABoss.attr("src", imageUrl);
+                likeABoss.attr("src", imageURL);
                 likeABoss.attr("alt", "like a boss image");
     
                 //
