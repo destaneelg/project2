@@ -1,0 +1,247 @@
+.navbar {
+  height: 60px;
+  background-color: #eaebee;
+  display: block;
+}
+
+.active {
+  width: 70px;
+  vertical-align: center;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: black;
+  margin-right: 15px;
+}
+
+.navbar .active:hover {
+  background-color: black;
+  color: white;
+}
+
+.other {
+  width: 70px;
+  vertical-align: center;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: tan;
+  margin-left: 15px;
+}
+
+.navbar .other:hover {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+body {
+  /* background-image: url(../img/Start\ Page\ Background.jpg); */
+  /* background-size: cover;
+  background-color: #2257ed ; */
+}
+
+.homepage {
+  background-size: cover;
+  background-color: #2257ed ;
+}
+.container {
+  margin-top: 10px;
+  /* background-color: white; */
+  padding: 10px;
+  align-items: center;
+}
+
+.project-header-1 {
+  margin-top: 50px;
+  font-weight: 400;
+  color: #b24aea;
+}
+
+.project-header-2 {
+  margin-top: 50px;
+  font-weight: 400;
+  color: #599fff;
+}
+
+thead {
+  background-color: 	#f8f9fa;
+}
+
+/* tbody {
+background-color: 	#white;
+} */
+
+.urgency-level-high {
+  background-color: #f62b54;
+  color: white;
+  }
+.urgency-level-mild {
+background-color: #ffac2b;
+color: white;
+}
+
+.urgency-level-low {
+background-color: 	#18d068;
+color: white;
+}
+
+.projects-status-open {
+  background-color: #ffac2b;
+color: white;
+}
+
+.projects-status-completed {
+  background-color: #18d068;
+color: white;
+}
+
+.fa-plus-square {
+  color: #18d068
+}
+
+.fa-minus-square {
+  color: #f62b54;
+}
+
+td, th {
+  background-color: white;
+}
+
+/* Emily's edits */
+
+.card {
+  margin: 1px;
+  margin-top: 2px;
+}
+
+.title {
+  padding-top: 5px;
+  padding-bottom: -10px;
+  color: black
+}
+
+.edit {
+  background-color: white;
+  color: black;
+  border: .5px solid #ffac2b;
+  float: right;
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.edit:hover {
+  background-color: #ffac2b;
+  color: white;
+  border: .5px solid #ffac2b;
+  float: right;
+}
+
+.delete {
+  background-color: white;
+  color: black;
+  border: .5px solid #18d068;
+  float: right;
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.delete:hover {
+  background-color: #18d068;
+  color: white;
+  border: .5px solid #18d068;
+  float: right;
+}
+
+.date {
+  margin-left: 220px;
+  font-size: 20px;
+  color: black
+}
+
+.urgency {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.urgency {
+  background-color: blue;
+  color: white;
+}
+
+/* homepage */
+
+
+
+.list-icon {
+  margin-bottom: 1px;
+}
+
+.getstarted {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+ .container {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 10px;
+
+  transform: translate(-50%, -50%);
+  margin-top: 400px; 
+}
+.messageH2 {
+  color: white;
+  padding-left: -5px;
+  font-size: 50px;
+}
+
+.new-task {
+  background-color: #ffac2b;
+  color: white;
+  
+}
+
+
+
+.task-bar {
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  /* The body's bg color will be #333 */
+  body {
+    background-color: #333;
+  }
+  
+    /* The wrapper's width will be 600px */
+    .wrapper {
+      width: 100%;
+    }
+  }
+
