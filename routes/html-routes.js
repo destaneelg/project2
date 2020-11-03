@@ -1,24 +1,29 @@
-// A set of routes for sending users to the various html pages
+// *********************************************************************************
+// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// *********************************************************************************
+
+// Dependencies
+// =============================================================
 var path = require("path");
 
 // Routes
-var express = require("express");
-
+// =============================================================
 module.exports = function(app) {
-  app.use(express.static(path.join(__dirname, "./public/assets")));
-  // These routes handle the HTML page that the user gets sent to.
+
+  // Each of the below routes just handles the HTML page that the user gets sent to.
+
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/list.html"));
+    res.sendFile(path.join(__dirname, "../public/list.html"));
   });
 
-  app.get("/to-do", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/to-do.html"));
+  app.get("/todo", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/todo.html"));
   });
 
-  // list route loads list.html
+  // blog route loads blog.html
   app.get("/list", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/list.html"));
+    res.sendFile(path.join(__dirname, "../public/list.html"));
   });
 
 };
