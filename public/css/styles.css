@@ -2,48 +2,53 @@
   height: 60px;
   background-color: #eaebee;
   display: block;
+  padding-bottom: 60px;
+  padding-top: 20px;
 }
 
 .active {
-  width: 70px;
+  width: 100px;
   vertical-align: center;
   float: left;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: white;
+  color: grey;
   text-align: center;
   text-decoration: none;
   font-size: 17px;
-  background-color: black;
+  
   margin-right: 15px;
 }
 
 .navbar .active:hover {
   background-color: black;
   color: white;
+  border-radius: 5px;
+  
 }
 
 .other {
-  width: 70px;
+  width: 100px;
   vertical-align: center;
   float: left;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: white;
+  color: grey;
   text-align: center;
   text-decoration: none;
   font-size: 17px;
-  background-color: tan;
+  
   margin-left: 15px;
 }
 
 .navbar .other:hover {
   background-color: black;
   color: white;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 500px) {
@@ -129,8 +134,9 @@ td, th {
 /* Emily's edits */
 
 .card {
-  margin: 1px;
+  margin: 15px;
   margin-top: 2px;
+  background-color: white;
 }
 
 .title {
@@ -176,7 +182,7 @@ td, th {
 .date {
   margin-left: 220px;
   font-size: 20px;
-  color: black
+  color: darkgray
 }
 
 .urgency {
@@ -185,8 +191,8 @@ td, th {
 }
 
 .urgency {
-  background-color: blue;
-  color: white;
+ color: black;
+ font-weight: bold;
 }
 
 /* homepage */
@@ -203,7 +209,7 @@ td, th {
   margin-top: 100px;
 }
 
- .container {
+ /* .container {
   position: relative;
 }
 
@@ -215,7 +221,7 @@ td, th {
 
   transform: translate(-50%, -50%);
   margin-top: 400px; 
-}
+} */
 .messageH2 {
   color: white;
   padding-left: -5px;
@@ -228,7 +234,13 @@ td, th {
   
 }
 
+.card-header {
+  background-color: white;
+}
 
+.title {
+  font-size: 30px;
+}
 
 .task-bar {
   float: right;
