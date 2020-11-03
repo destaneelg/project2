@@ -4,7 +4,7 @@ $(document).ready(function () {
   var listContainer = $(".list-container");
   var postUrgencySelect = $("#urgency");
   // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
+  $(document).on("click", "button.delete-btn", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
   postUrgencySelect.on("change", handleUrgencyChange);
   var posts;
@@ -70,7 +70,7 @@ $(document).ready(function () {
     newPostCardHeading.addClass("card-header");
     var deleteBtn = $("<button>");
     deleteBtn.text("✓");
-    deleteBtn.addClass("delete btn btn-danger");
+    deleteBtn.addClass("delete-btn");
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
@@ -108,6 +108,38 @@ $(document).ready(function () {
     return newPostCard;
   }
 
+  
+      // 2nd API, to get the checkmark if pressed, to populate a gif.
+      $("button.delete-btn").on("click", function () {
+          console.log("hey");
+        var queryURL = "https://media.giphy.com/media/l0IykI5OLMhjtnB60/giphy.gif";
+    
+        // call ajax that allows you to make a query of info on the web
+        // ajax takes url and get method 
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+    
+            //after you look at api- run this dad
+            .then(function (response) {
+    
+                // saving img to imgeURL
+                var imageUrl = response.data.image_original_url;
+                  console.log(imageUrl);
+                // creating and sotring an img tag
+                var likeABoss = $("<img>");
+    
+                // image element likeABoss and change the souce is the url
+                //add an alt attribute 
+                likeABoss.attr("src", imageUrl);
+                likeABoss.attr("alt", "like a boss image");
+    
+                //
+                $("#images").prepend(likeABoss);
+            });
+    });
+
   // conencting urgency level to date 
   // var lowUrgency = newmoment().add(2, 'month');
   // var mediumUrgency = newmoment().add(30, 'month');
@@ -125,7 +157,9 @@ $(document).ready(function () {
       .parent()
       .parent()
       .data("post");
-    deletePost(currentPost.id);
+    deletePost(currentPost.id)
+    // if (deletePost)
+    // return 
   }
 
   // This function figures out which post we want to edit and takes it to the
