@@ -1,12 +1,10 @@
-# project2
-
-##Listly
+# Listly
 
  
 
 ## User Story
 ```
-
+I need an application that can hold all my list and filter them by level of urgency. I need to have the ability to change a task as needed and check them off when complete.
 ```
 ## Website Functionality
 ```
@@ -27,6 +25,8 @@ THEN You can add another task.
 ```
 ## Instructions for future development
 ```
+We would like to make this a collaborative app where you can work together
+and make the urgency level create a corresponding due date. 
 
 ```
 ## Review
